@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1b2737 !important;
+}
+
+.modal-card-body {
+  margin: 20px;
+  .title {
+    margin-bottom: 40px !important;
+  }
+}
+
+.successIcon {
+  margin-right: 10px;
+}

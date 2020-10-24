@@ -1,0 +1,10 @@
+export default {
+  PRIMARY: "#1B2737",
+  SECONDARY: "#2D3A4A",
+  SECONDARY_LIGHT: "#3B4A5C",
+  DANGER: "#FF0F50",
+  DANGER_DARK: "#EA0D49",
+  GRAY: "#59646B",
+  GRAY_LIGHT: "#B2B7BA",
+  WHITE: "#ffffff",
+};
