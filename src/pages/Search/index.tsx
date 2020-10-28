@@ -17,7 +17,7 @@ const Search = () => {
     if (query) dispatch(search(query));
   }, [query]);
 
-  return <SearchView elements={searchedGames} />;
+  return <SearchView elements={searchedGames} query={query} />;
 };
 
 export default Search;
