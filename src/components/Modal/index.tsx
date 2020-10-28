@@ -2,16 +2,25 @@
 import React from "react";
 import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-const Modal = ({ title, content, isActive = false, show }: ModalProps) => {
+const Modal = ({
+  title,
+  content,
+  isActive = false,
+  show,
+  isSuccess = true,
+}: ModalProps) => {
   return (
     <div className={cn("modal", { "is-active": isActive })}>
       <div onClick={() => show(false)} className="modal-background"></div>
       <div className="modal-card">
         <section className="modal-card-body">
           <h1 className="title has-text-left">
-            <FontAwesomeIcon icon={faCheck} className="successIcon" />
+            <FontAwesomeIcon
+              icon={isSuccess ? faCheck : faInfoCircle}
+              className="successIcon"
+            />
             {title}
           </h1>
           <h2 className="subtitle modalContent has-text-left">{content}</h2>
@@ -34,6 +43,7 @@ type ModalProps = {
   content: string;
   isActive: boolean;
   show: Function;
+  isSuccess?: boolean;
 };
 
 export default Modal;

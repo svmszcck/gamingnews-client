@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Header } from "components";
-import { Home, GameDetails } from "pages";
+import { Home, GameDetails, Search } from "pages";
 
 export default () => {
   return (
@@ -10,11 +10,14 @@ export default () => {
       <div>
         <Header />
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/game/:id">
+          <Route path="/game/:id" exact>
             <GameDetails />
+          </Route>
+          <Route path="/search" exact>
+            <Search />
           </Route>
         </Switch>
       </div>

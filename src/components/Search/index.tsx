@@ -1,28 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Link, useHistory } from "react-router-dom";
 import cn from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+import { handleEnter } from "utils/general";
+import { useParams } from "hooks";
 import Colors from "app_constants/colors";
 
 const Search = ({ className, onClick }: SearchProps) => {
+  const [value, setValue] = useState<string>("");
+  const [focused, setFocused] = useState<boolean>(false);
+  const history = useHistory();
+  const params = useParams();
+  const query = params.get("query");
+  const active = focused || value !== "";
+
+  useEffect(() => {
+    if (query) setValue(query);
+  }, [query]);
+
   return (
-    <Styled>
+    <Styled active={active}>
       <div className={cn("container", className)}>
-        <FontAwesomeIcon
-          icon={faSearch}
-          color={Colors.GRAY}
-          className="searchIcon"
-          onClick={onClick}
+        <Link to={`/search?query=${value}`} className="logoContanier">
+          <FontAwesomeIcon
+            icon={faSearch}
+            color={Colors.GRAY}
+            className="searchIcon"
+            onClick={() => onClick(value)}
+          />
+        </Link>
+        <input
+          className="searchInput"
+          placeholder="Search..."
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          onKeyDown={(e) =>
+            handleEnter(e, () => history.push(`/search?query=${value}`))
+          }
         />
-        <input className="searchInput" placeholder="Search..." />
       </div>
     </Styled>
   );
 };
 
-const Styled = styled.div`
+const Styled = styled.div<StyledType>`
   .container {
     display: flex;
     align-items: center;
@@ -41,9 +67,9 @@ const Styled = styled.div`
       height: 30px;
       transition: all 0.2s linear;
       width: 200px;
+      ${({ active }) => active && "outline: none; width: 300px;"}
       &:focus {
         outline: none;
-        width: 300px;
       }
     }
   }
@@ -51,7 +77,11 @@ const Styled = styled.div`
 
 type SearchProps = {
   className?: string;
-  onClick: () => void;
+  onClick: (value: string) => void;
+};
+
+type StyledType = {
+  active: boolean;
 };
 
 export default Search;

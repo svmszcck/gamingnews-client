@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.div`
-  margin: 80px 0 80px 0;
+  padding: 80px 2vw 80px 2vw;
   .topSection {
     display: flex;
     flex-direction: row;

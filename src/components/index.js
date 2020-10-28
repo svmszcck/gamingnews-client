@@ -6,3 +6,6 @@ export { default as OverlayMenu } from "./OverlayMenu";
 export { default as Search } from "./Search";
 export { default as Modal } from "./Modal";
 export { default as ScrollDetector } from "./ScrollDetector";
+export { default as Section } from "./Section";
+export { default as Image } from "./Image";
+export { default as Card } from "./Card";

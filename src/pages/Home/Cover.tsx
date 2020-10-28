@@ -8,9 +8,9 @@ import Colors from "app_constants/colors";
 const Cover = () => {
   return (
     <Styled>
-      <Grid fluid className="grid">
+      <Grid className="grid">
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} lg={6}>
             <h5 className="title is-5 category">GAME OF THE DAY</h5>
             <h1 className="title is-1 header">
               Explore Dota 2 with game-play videos & photos
@@ -25,7 +25,7 @@ const Cover = () => {
               Read More
             </Button>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} lg={6}>
             <img src="https://playerbros.com/wp-content/uploads/2019/10/dota2mam.jpg" />
           </Col>
         </Row>
@@ -41,6 +41,8 @@ const Styled = styled.div`
   width: 100%;
   .grid {
     width: 100%;
+    padding: 0;
+    margin: 0;
     .category {
       color: ${Colors.DANGER};
     }
@@ -51,7 +53,7 @@ const Styled = styled.div`
       color: ${Colors.GRAY_LIGHT};
     }
     .action {
-      margin-top: 20px;
+      margin: 20px 0 30px 0;
     }
   }
 `;

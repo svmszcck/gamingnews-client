@@ -43,7 +43,7 @@ type ButtonProps = {
   type?: string;
   children: string;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default Button;

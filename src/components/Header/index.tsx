@@ -10,14 +10,16 @@ import { useSelector } from "react-redux";
 import { Avatar, Modal, Search } from "components";
 import Colors from "app_constants/colors";
 import { mobileTablet } from "utils/responsive";
+import { Store } from "types";
 
 const RenderModal = ({ modal, showModal }: RenderModalProps) => {
   return (
     <Modal
       title="Warning"
-      content="This item has no functionality!"
+      content="This item has no functionality yet :("
       isActive={modal}
       show={showModal}
+      isSuccess={false}
     />
   );
 };
@@ -25,7 +27,7 @@ const RenderModal = ({ modal, showModal }: RenderModalProps) => {
 const Header = () => {
   const [modal, showModal] = useState(false);
   const isMobileTablet = useMediaQuery(mobileTablet);
-  const { scrolled } = useSelector((state: any) => state.ui);
+  const { scrolled } = useSelector((state: Store) => state.ui);
   return (
     <Styled scrolled={scrolled}>
       <div className="navbar is-fixed-top">

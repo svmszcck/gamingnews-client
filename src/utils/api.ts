@@ -8,6 +8,7 @@ export const sendRequest = async (path: string, params: object = {}) => {
     params: {
       ...params,
       api_key: API_KEY,
+      format: "json",
     },
   });
   return response?.data;
