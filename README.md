@@ -18,8 +18,6 @@
 - Axios for API Calls
 - Jest & Enzyme for Unit Testing
 
-<br>
-
 # Details
 
 I have used Giant Bomb video game API.
