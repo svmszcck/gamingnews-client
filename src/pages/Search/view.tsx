@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { Link } from "react-router-dom";
 
-import { Section, Card } from "components";
+import { Section, Card, Image } from "components";
 import { Game } from "types";
+
+import search from "assets/images/search.png";
 
 const SearchView = ({ elements }: SearchViewProps) => {
   return (
     <Styled>
       <div className="container is-fluid">
+        <Image src={search} alt="Search Results" />
         <Section title="Search Results">
           <Grid className="grid">
             <Row>
