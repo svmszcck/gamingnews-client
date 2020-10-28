@@ -1,6 +1,8 @@
 # React Test App
 
-(Still in progress, code quality will be improved in time)
+(Development is still in progress, code quality will be improved in time)
+
+<br>
 
 <img src="https://i.ibb.co/nwKGyVN/gaming-news.png" >
 
