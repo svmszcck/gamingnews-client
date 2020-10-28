@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
-import { Button } from "components";
+import { Button, Image } from "components";
 import Colors from "app_constants/colors";
 
 const Cover = () => {
@@ -26,7 +26,11 @@ const Cover = () => {
             </Button>
           </Col>
           <Col xs={12} lg={6}>
-            <img src="https://playerbros.com/wp-content/uploads/2019/10/dota2mam.jpg" />
+            <Image
+              src="https://playerbros.com/wp-content/uploads/2019/10/dota2mam.jpg"
+              alt="Dota 2"
+              className="cover"
+            />
           </Col>
         </Row>
       </Grid>
@@ -43,6 +47,9 @@ const Styled = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
+    .cover {
+      border-radius: 5px;
+    }
     .category {
       color: ${Colors.DANGER};
     }

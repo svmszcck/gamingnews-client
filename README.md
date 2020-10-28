@@ -19,3 +19,11 @@
 - Jest & Enzyme for Unit Testing
 
 <br>
+
+# Details
+
+I have used Giant Bomb video game API.
+
+You need to enable CORS with a plugin while running the localhost server. Because GiantBomb Api doesn't support CORS. I suggest this one:
+
+https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc
