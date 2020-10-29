@@ -6,6 +6,8 @@
 
 <img src="https://i.ibb.co/nwKGyVN/gaming-news.png" >
 
+<img src="https://i.ibb.co/NjZH5pd/gaming-news2.png" >
+
 <br>
 
 **Used Technologies:**
