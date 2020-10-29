@@ -1,6 +1,12 @@
-import { gamesService, genresService, searchService } from "services/post";
+import {
+  gameService,
+  gamesService,
+  genresService,
+  searchService,
+} from "services/post";
 
 import {
+  UPDATE_GAME,
   UPDATE_GAMES,
   UPDATE_GENRES,
   UPDATE_SEARCHED_GAMES,
@@ -12,6 +18,13 @@ export const getGames = (offset: number, limit?: number) => async (
   const data = await gamesService(offset, "original_release_date", limit);
   if (data?.results) {
     dispatch({ type: UPDATE_GAMES, payload: { games: data.results } });
+  }
+};
+
+export const getGame = (id: string) => async (dispatch: Function) => {
+  const data = await gameService(id);
+  if (data?.results) {
+    dispatch({ type: UPDATE_GAME, payload: { game: data.results } });
   }
 };
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { Button, Section } from "components";
 import Colors from "app_constants/colors";
+import { MAIN_SITE } from "app_constants/general";
 import { Genre } from "types";
 
 const Genres = ({ elements }: GenresProps) => {
@@ -15,7 +16,12 @@ const Genres = ({ elements }: GenresProps) => {
             <Button
               type="is-primary"
               className="action"
-              onClick={() => window.open(genre.site_detail_url, "_blank")}
+              onClick={() =>
+                window.open(
+                  `${MAIN_SITE}/games/?game_filter[genre]=${genre.id}`,
+                  "_blank"
+                )
+              }
             >
               {genre.name}
             </Button>

@@ -7,6 +7,7 @@ import InfiniteScroll from "react-infinite-scroller";
 
 import { Card, Section } from "components";
 import { Game } from "types";
+import { generateImage } from "utils/general";
 
 const Games = ({ elements, loadElements }: GamesProps) => {
   return (
@@ -16,7 +17,7 @@ const Games = ({ elements, loadElements }: GamesProps) => {
           pageStart={1}
           loadMore={loadElements}
           hasMore
-          loader={<div className="loader" key={0}></div>}
+          loader={<div className="loader" key={0} />}
           initialLoad={true}
         >
           <Grid className="grid">
@@ -24,7 +25,10 @@ const Games = ({ elements, loadElements }: GamesProps) => {
               {elements.map((game: Game, index: number) => (
                 <Col xs={6} lg={3} key={index.toString()}>
                   <Link to={`/game/${game.id}`}>
-                    <Card name={game.name} image={game.image.medium_url}></Card>
+                    <Card
+                      name={game.name}
+                      image={require(`assets/images/gameImages/${generateImage()}`)}
+                    ></Card>
                   </Link>
                 </Col>
               ))}
@@ -41,6 +45,9 @@ const Styled = styled.div`
     width: 100%;
     padding: 0;
     margin: 0;
+  }
+  .loader {
+    margin: 30px auto 0 auto;
   }
 `;
 

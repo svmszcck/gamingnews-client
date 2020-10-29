@@ -13,6 +13,7 @@ export type Game = {
 };
 
 export type Genre = {
+  id: string;
   name: string;
   site_detail_url: string;
 };
@@ -37,4 +38,5 @@ export type PostsState = {
   games: Array<Game>;
   genres: Array<Genre>;
   searchedGames: Array<Game>;
+  game: Game;
 };

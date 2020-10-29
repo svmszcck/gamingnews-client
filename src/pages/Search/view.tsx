@@ -9,7 +9,6 @@ import { mobile } from "utils/responsive";
 import Colors from "app_constants/colors";
 import { Game } from "types";
 
-import search from "assets/images/search.png";
 import searchNoResult from "assets/images/search-no-result.png";
 
 const SearchView = ({ elements, query }: SearchViewProps) => {
@@ -19,25 +18,22 @@ const SearchView = ({ elements, query }: SearchViewProps) => {
     <Styled isMobile={isMobile}>
       <div className="container is-fluid">
         {query ? (
-          <>
-            <Image src={search} alt="Search Results" className="search" />
-            <Section title={`Search Results for "${query}"`}>
-              <Grid className="grid">
-                <Row>
-                  {elements.map((element: Game, index: number) => (
-                    <Col xs={6} lg={3} key={index.toString()}>
-                      <Link to={`/game/${element.id}`}>
-                        <Card
-                          name={element.name}
-                          image={element.image.medium_url}
-                        />
-                      </Link>
-                    </Col>
-                  ))}
-                </Row>
-              </Grid>
-            </Section>
-          </>
+          <Section title={`Search Results for "${query}"`}>
+            <Grid className="grid">
+              <Row>
+                {elements.map((element: Game, index: number) => (
+                  <Col xs={6} lg={3} key={index.toString()}>
+                    <Link to={`/game/${element.id}`}>
+                      <Card
+                        name={element.name}
+                        image={element.image.medium_url}
+                      />
+                    </Link>
+                  </Col>
+                ))}
+              </Row>
+            </Grid>
+          </Section>
         ) : (
           <div className="searchFailed">
             <Image src={searchNoResult} alt="No Search Result" />
