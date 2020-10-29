@@ -22,10 +22,11 @@ const Games = ({ elements, loadElements }: GamesProps) => {
         >
           <Grid className="grid">
             <Row>
-              {elements.map((game: Game, index: number) => (
-                <Col xs={6} lg={3} key={index.toString()}>
+              {elements.map((game: Game) => (
+                <Col xs={6} lg={3} key={game.id}>
                   <Link to={`/game/${game.id}`}>
                     <Card
+                      id={game.id}
                       name={game.name}
                       image={require(`assets/images/gameImages/${generateImage()}`)}
                     ></Card>

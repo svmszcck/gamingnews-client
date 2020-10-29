@@ -1,14 +1,21 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useMemo } from "react";
 import styled from "styled-components";
 
 import { Image } from "components";
 import Colors from "app_constants/colors";
 
-const Card = ({ name, image, alt }: CardProps) => {
+const Card = ({ id, name, image, alt }: CardProps) => {
   return (
     <Styled>
       <div className="imageContainer">
-        <Image src={image} className="cover" alt={alt ? alt : "Game Cover"} />
+        <Image
+          id={id}
+          isCached
+          src={image}
+          className="cover"
+          alt={alt ? alt : "Game Cover"}
+        />
       </div>
       <p className="subtitle is-6 gameTitle">{name}</p>
     </Styled>
@@ -16,6 +23,7 @@ const Card = ({ name, image, alt }: CardProps) => {
 };
 
 type CardProps = {
+  id: string;
   name: string;
   image: string;
   url?: string;
