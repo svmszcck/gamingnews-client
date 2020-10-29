@@ -51,6 +51,9 @@ const Styled = styled.div`
     margin-top: 10px;
     color: ${Colors.GRAY_LIGHT};
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 

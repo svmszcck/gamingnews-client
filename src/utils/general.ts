@@ -14,3 +14,8 @@ export const generateImage = () => {
 export const randomNum = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+export const trimText = (text: string, limit: number) => {
+  const result = text.substring(0, limit - 3);
+  return `${result}...`;
+};
